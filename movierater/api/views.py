@@ -7,7 +7,10 @@ from  rest_framework.response import Response
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 # Create your views here.
-from  . serializers import  MovieSerializer, RatingSerializer
+from  . serializers import  MovieSerializer, RatingSerializer,UserSerializer
+class  UserViewSet(viewsets.ModelViewSet):
+    queryset=User.objects.all()
+    serializer_class=UserSerializer
 class  MovieViewSet(viewsets.ModelViewSet):
     queryset=Movie.objects.all()
     serializer_class=MovieSerializer
